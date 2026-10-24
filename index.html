@@ -1,0 +1,607 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Shark Detailing — детейлинг-центр в Махачкале</title>
+<meta name="description" content="Shark Detailing в Махачкале: антигравийная плёнка, тонировка, полировка, керамика и химчистка салона. Ул. Азизова, 41. Запись в WhatsApp.">
+<meta property="og:title" content="Shark Detailing — детейлинг в Махачкале">
+<meta property="og:description" content="Антигравийная защита, тонировка, полировка, керамика, химчистка.">
+<meta property="og:image" content="img/hero.jpg">
+<link rel="icon" href="img/logo.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;700;800&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#09090a;
+  --bg-2:#111113;
+  --card:#141416;
+  --line:rgba(255,255,255,.08);
+  --text:#f4f4f5;
+  --muted:#9a9aa2;
+  --red:#c8101e;
+  --red-hi:#ff2a3a;
+  --red-deep:#6e0710;
+  --radius:16px;
+  --wrap:1200px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--text);font-family:Manrope,system-ui,sans-serif;font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+img{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:var(--wrap);margin:0 auto;padding:0 24px}
+h1,h2,h3,.display{font-family:Unbounded,Manrope,sans-serif;letter-spacing:-.01em;line-height:1.1}
+
+/* ---------- buttons ---------- */
+.btn{display:inline-flex;align-items:center;gap:12px;padding:16px 28px;border-radius:999px;font-weight:700;font-size:15px;cursor:pointer;border:0;transition:transform .2s,box-shadow .2s,background .2s}
+.btn svg{width:18px;height:18px;flex:none}
+.btn-red{background:linear-gradient(135deg,var(--red-hi),var(--red));color:#fff;box-shadow:0 10px 30px -10px rgba(255,42,58,.7)}
+.btn-red:hover{transform:translateY(-2px);box-shadow:0 16px 40px -10px rgba(255,42,58,.85)}
+.btn-ghost{border:1px solid rgba(255,255,255,.2);color:#fff;background:rgba(255,255,255,.03)}
+.btn-ghost:hover{border-color:var(--red-hi);background:rgba(200,16,30,.12)}
+
+.eyebrow{display:flex;align-items:center;gap:14px;font-size:12px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);margin-bottom:18px}
+.eyebrow::before{content:"";width:36px;height:2px;background:var(--red-hi)}
+
+/* ---------- header ---------- */
+header{position:fixed;inset:0 0 auto 0;z-index:50;transition:background .3s,border-color .3s;border-bottom:1px solid transparent}
+header.scrolled{background:rgba(9,9,10,.85);backdrop-filter:blur(14px);border-color:var(--line)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:80px;gap:24px}
+.brand{display:flex;align-items:center;gap:12px}
+.brand img{width:44px;height:44px;border-radius:50%;object-fit:cover}
+.brand b{font-family:Unbounded;font-size:17px;letter-spacing:.02em;display:block;line-height:1}
+.brand b span{color:var(--red-hi)}
+.brand small{display:block;font-size:11px;color:var(--muted);margin-top:4px;letter-spacing:.05em}
+.menu{display:flex;gap:32px;font-size:14px;font-weight:600;color:#d4d4d8}
+.menu a{position:relative;padding:6px 0}
+.menu a::after{content:"";position:absolute;left:0;bottom:0;width:0;height:2px;background:var(--red-hi);transition:width .25s}
+.menu a:hover::after{width:100%}
+.nav-right{display:flex;align-items:center;gap:18px}
+.ig-link{display:flex;align-items:center;justify-content:center;width:44px;height:44px;border-radius:50%;border:1px solid var(--line);transition:border-color .2s,background .2s}
+.ig-link:hover{border-color:var(--red-hi);background:rgba(200,16,30,.12)}
+.ig-link svg{width:20px;height:20px}
+.nav .btn{padding:12px 22px;font-size:14px}
+.burger{display:none;width:44px;height:44px;border-radius:12px;border:1px solid var(--line);background:none;color:#fff;cursor:pointer;align-items:center;justify-content:center}
+.burger svg{width:22px;height:22px}
+
+/* ---------- hero ---------- */
+.hero{position:relative;min-height:100vh;min-height:100svh;display:flex;align-items:center;overflow:hidden;padding:120px 0 80px}
+.hero-bg{position:absolute;inset:0;z-index:0}
+.hero-bg img{position:absolute;right:0;top:0;height:100%;width:62%;object-fit:cover;object-position:center 60%}
+.hero-bg::after{content:"";position:absolute;inset:0;background:
+  linear-gradient(90deg,var(--bg) 38%,rgba(9,9,10,.75) 55%,rgba(9,9,10,.15) 80%,rgba(9,9,10,.35)),
+  linear-gradient(0deg,var(--bg) 0%,transparent 30%),
+  radial-gradient(60% 60% at 75% 40%,rgba(200,16,30,.25),transparent 70%)}
+.hero .wrap{position:relative;z-index:1;width:100%}
+.hero h1{font-size:clamp(36px,5vw,72px);font-weight:800;text-transform:uppercase;max-width:780px}
+.hero h1 em{font-style:normal;color:transparent;background:linear-gradient(135deg,#ff4654,var(--red));-webkit-background-clip:text;background-clip:text;display:block}
+.hero p.lead{max-width:470px;color:#c4c4cb;font-size:18px;margin:28px 0 40px}
+.hero-actions{display:flex;flex-wrap:wrap;gap:14px}
+.hero-stats{display:flex;gap:48px;margin-top:64px;flex-wrap:wrap}
+.hero-stats div{text-align:center}
+.hero-stats div b{font-family:Unbounded;font-size:30px;display:block;line-height:1}
+.hero-stats div b i{font-style:normal;color:var(--red-hi)}
+.hero-stats div span{font-size:13px;color:var(--muted)}
+.scroll-hint{position:absolute;left:50%;bottom:28px;transform:translateX(-50%);z-index:1;width:26px;height:42px;border:2px solid rgba(255,255,255,.25);border-radius:14px}
+.scroll-hint::after{content:"";position:absolute;left:50%;top:8px;width:4px;height:8px;margin-left:-2px;border-radius:2px;background:var(--red-hi);animation:dot 1.6s infinite}
+@keyframes dot{0%{opacity:0;transform:translateY(0)}40%{opacity:1}100%{opacity:0;transform:translateY(14px)}}
+
+/* ---------- sections ---------- */
+section{padding:110px 0}
+.sec-head{display:flex;justify-content:space-between;align-items:flex-end;gap:24px;margin-bottom:48px;flex-wrap:wrap}
+.sec-head h2{font-size:clamp(28px,3.6vw,46px);font-weight:700}
+.sec-head p{max-width:420px;color:var(--muted)}
+
+/* services */
+.services{display:grid;grid-template-columns:repeat(6,1fr);gap:20px}
+.svc{grid-column:span 2;position:relative;border-radius:var(--radius);overflow:hidden;background:var(--card);border:1px solid var(--line);min-height:420px;display:flex;flex-direction:column;justify-content:flex-end;isolation:isolate;transition:border-color .3s,transform .3s}
+.svc:nth-child(1),.svc:nth-child(2){grid-column:span 3;min-height:460px}
+.svc img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:-2;transition:transform .7s;filter:saturate(.85)}
+.svc::before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(9,9,10,0) 25%,rgba(9,9,10,.75) 60%,rgba(9,9,10,.97))}
+.svc:hover{border-color:rgba(255,42,58,.5);transform:translateY(-4px)}
+.svc:hover img{transform:scale(1.06)}
+.svc-body{padding:28px}
+.svc-num{position:absolute;top:22px;left:24px;font-family:Unbounded;font-size:13px;color:#fff;background:rgba(9,9,10,.55);backdrop-filter:blur(8px);border:1px solid var(--line);padding:6px 12px;border-radius:999px}
+.svc h3{font-size:22px;font-weight:700;margin-bottom:10px}
+.svc p{color:#bdbdc4;font-size:15px;margin-bottom:18px;max-width:420px}
+.svc ul{list-style:none;display:flex;flex-wrap:wrap;gap:8px;margin-bottom:22px}
+.svc li{font-size:12px;font-weight:600;padding:6px 12px;border-radius:999px;background:rgba(255,255,255,.07);border:1px solid var(--line)}
+.svc-link{display:inline-flex;align-items:center;gap:10px;font-weight:700;font-size:14px;color:#fff}
+.svc-link span{display:flex;width:36px;height:36px;border-radius:50%;background:var(--red);align-items:center;justify-content:center;transition:background .2s,transform .2s}
+.svc-link:hover span{background:var(--red-hi);transform:translateX(4px)}
+.svc-link svg{width:16px;height:16px}
+
+/* why */
+.why{background:var(--bg-2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.why-grid{display:grid;grid-template-columns:1fr 1.15fr;gap:72px;align-items:center}
+.why-img{position:relative;border-radius:var(--radius);overflow:hidden;aspect-ratio:4/5}
+.why-img img{width:100%;height:100%;object-fit:cover}
+.why-badge{position:absolute;left:20px;bottom:20px;right:20px;display:flex;align-items:center;gap:16px;padding:18px 20px;border-radius:14px;background:rgba(9,9,10,.7);backdrop-filter:blur(12px);border:1px solid var(--line)}
+.why-badge b{font-family:Unbounded;font-size:34px;line-height:1}
+.why-badge .stars{color:#ffb020;letter-spacing:2px;font-size:15px}
+.why-badge small{color:var(--muted);font-size:13px;display:block}
+.why h2{font-size:clamp(28px,3.6vw,46px);margin-bottom:20px}
+.why .intro{color:var(--muted);margin-bottom:44px;max-width:520px}
+.features{display:grid;grid-template-columns:1fr 1fr;gap:34px 30px}
+.feat{display:flex;gap:16px}
+.feat-ic{flex:none;width:52px;height:52px;border-radius:50%;border:1px solid rgba(255,42,58,.35);background:radial-gradient(circle at 30% 30%,rgba(255,42,58,.22),rgba(200,16,30,.05));display:flex;align-items:center;justify-content:center;color:var(--red-hi)}
+.feat-ic svg{width:22px;height:22px}
+.feat h4{font-size:16px;font-weight:700;margin-bottom:4px}
+.feat p{font-size:14px;color:var(--muted)}
+
+/* works */
+.works-grid{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:260px;gap:14px}
+.works-grid button{position:relative;border:0;padding:0;border-radius:14px;overflow:hidden;cursor:zoom-in;background:var(--card)}
+.works-grid button:nth-child(1){grid-column:span 2;grid-row:span 2}
+.works-grid img{width:100%;height:100%;object-fit:cover;transition:transform .6s,filter .3s;filter:brightness(.88)}
+.works-grid button:hover img{transform:scale(1.05);filter:brightness(1)}
+.works-grid button::after{content:"";position:absolute;inset:0;border:2px solid transparent;border-radius:14px;transition:border-color .3s}
+.works-grid button:hover::after{border-color:var(--red-hi)}
+
+.lightbox{position:fixed;inset:0;z-index:100;background:rgba(0,0,0,.92);display:none;align-items:center;justify-content:center;padding:24px}
+.lightbox.open{display:flex}
+.lightbox img{max-height:90vh;max-width:min(92vw,900px);border-radius:12px;object-fit:contain}
+.lb-btn{position:absolute;width:52px;height:52px;border-radius:50%;border:1px solid rgba(255,255,255,.2);background:rgba(20,20,22,.8);color:#fff;font-size:22px;cursor:pointer;display:flex;align-items:center;justify-content:center}
+.lb-btn:hover{border-color:var(--red-hi)}
+.lb-close{top:20px;right:20px}
+.lb-prev{left:20px;top:50%;transform:translateY(-50%)}
+.lb-next{right:20px;top:50%;transform:translateY(-50%)}
+
+/* process */
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;counter-reset:s}
+.step{padding:30px 26px;border-radius:var(--radius);background:var(--card);border:1px solid var(--line);position:relative;overflow:hidden}
+.step::before{counter-increment:s;content:"0" counter(s);font-family:Unbounded;font-weight:800;font-size:64px;line-height:1;position:absolute;right:16px;top:12px;color:rgba(255,255,255,.04)}
+.step-dot{width:12px;height:12px;border-radius:50%;background:var(--red-hi);box-shadow:0 0 0 6px rgba(255,42,58,.15);margin-bottom:26px}
+.step h4{font-size:18px;margin-bottom:8px;font-family:Unbounded;font-weight:600}
+.step p{color:var(--muted);font-size:14px}
+
+/* reviews */
+.reviews{background:var(--bg-2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.rating-pill{display:flex;align-items:center;gap:16px;padding:14px 22px;border-radius:999px;border:1px solid var(--line);background:var(--card)}
+.rating-pill b{font-family:Unbounded;font-size:26px}
+.rating-pill .stars{color:#ffb020;letter-spacing:2px}
+.rating-pill small{color:var(--muted);font-size:12px;display:block}
+.rev-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.rev{padding:28px;border-radius:var(--radius);background:var(--card);border:1px solid var(--line);display:flex;flex-direction:column;gap:18px}
+.rev .q{font-family:Unbounded;font-size:44px;line-height:.6;color:var(--red-hi);height:22px}
+.rev p{color:#d4d4d8;flex:1}
+.rev-author{display:flex;align-items:center;gap:12px;padding-top:18px;border-top:1px solid var(--line)}
+.ava{width:42px;height:42px;border-radius:50%;background:linear-gradient(135deg,var(--red),var(--red-deep));display:flex;align-items:center;justify-content:center;font-weight:700;font-size:14px}
+.rev-author b{display:block;font-size:15px}
+.rev-author small{color:var(--muted);font-size:12px}
+.rev-more{text-align:center;margin-top:40px}
+
+/* CTA */
+.cta{padding:0}
+.cta-box{position:relative;border-radius:24px;overflow:hidden;padding:72px 64px;display:grid;grid-template-columns:1.3fr 1fr;gap:40px;align-items:center;background:radial-gradient(120% 140% at 100% 0%,#e0162a 0%,var(--red) 30%,var(--red-deep) 75%,#2a0206 100%)}
+.cta-box::after{content:"";position:absolute;right:-60px;bottom:-80px;width:420px;height:420px;background:url(img/logo.jpg) center/cover;border-radius:50%;opacity:.12;mix-blend-mode:luminosity}
+.cta-box h2{font-size:clamp(28px,3.6vw,44px);position:relative;z-index:1}
+.cta-box p{color:rgba(255,255,255,.85);margin-top:16px;position:relative;z-index:1;max-width:520px}
+.cta-actions{display:flex;flex-direction:column;gap:14px;align-items:flex-start;position:relative;z-index:1}
+.btn-white{background:#fff;color:#111}
+.btn-white:hover{transform:translateY(-2px);box-shadow:0 14px 34px -10px rgba(0,0,0,.6)}
+.btn-white svg{color:#25d366}
+
+/* contacts */
+.contacts-grid{display:grid;grid-template-columns:1fr 1.2fr;gap:24px}
+.c-card{padding:40px;border-radius:var(--radius);background:var(--card);border:1px solid var(--line)}
+.c-row{display:flex;gap:16px;padding:20px 0;border-bottom:1px solid var(--line)}
+.c-row:first-of-type{padding-top:0}
+.c-row:last-of-type{border:0}
+.c-row .feat-ic{width:46px;height:46px}
+.c-row small{display:block;color:var(--muted);font-size:13px}
+.c-row b,.c-row a{font-size:17px;font-weight:700}
+.c-row a:hover{color:var(--red-hi)}
+.c-card .btns{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}
+.c-photo{position:relative;border-radius:var(--radius);overflow:hidden;min-height:440px}
+.c-photo img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.c-photo::after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(9,9,10,.9),transparent 55%)}
+.c-photo .cap{position:absolute;left:28px;bottom:26px;right:28px;z-index:1;display:flex;justify-content:space-between;align-items:flex-end;gap:16px;flex-wrap:wrap}
+.c-photo .cap b{font-family:Unbounded;font-size:20px;display:block}
+.c-photo .cap span{color:#c4c4cb;font-size:14px}
+
+footer{padding:40px 0;margin-top:110px;border-top:1px solid var(--line)}
+.foot{display:flex;justify-content:space-between;align-items:center;gap:24px;flex-wrap:wrap;color:var(--muted);font-size:14px}
+.foot a:hover{color:#fff}
+.foot-links{display:flex;gap:24px;flex-wrap:wrap}
+
+/* floating WhatsApp */
+.wa-float{position:fixed;right:22px;bottom:22px;z-index:60;width:62px;height:62px;border-radius:50%;background:#25d366;display:flex;align-items:center;justify-content:center;box-shadow:0 12px 30px -8px rgba(37,211,102,.6);transition:transform .2s}
+.wa-float:hover{transform:scale(1.08)}
+.wa-float svg{width:32px;height:32px;color:#fff}
+.wa-float::before{content:"";position:absolute;inset:0;border-radius:50%;border:2px solid #25d366;animation:ping 2s infinite}
+@keyframes ping{0%{transform:scale(1);opacity:.8}100%{transform:scale(1.6);opacity:0}}
+
+/* reveal */
+.reveal{opacity:0;transform:translateY(28px);transition:opacity .8s ease,transform .8s ease}
+.reveal.in{opacity:1;transform:none}
+
+/* ---------- mobile menu ---------- */
+.mob{position:fixed;inset:0;z-index:70;background:rgba(9,9,10,.98);display:none;flex-direction:column;padding:24px}
+.mob.open{display:flex}
+.mob-top{display:flex;justify-content:space-between;align-items:center;height:56px}
+.mob nav{display:flex;flex-direction:column;gap:6px;margin-top:40px}
+.mob nav a{font-family:Unbounded;font-size:26px;padding:12px 0;border-bottom:1px solid var(--line)}
+.mob .btn{margin-top:auto;justify-content:center}
+
+/* ---------- responsive ---------- */
+@media (max-width:1080px){
+  .menu{display:none}
+  .burger{display:flex}
+  .nav .btn{display:none}
+  .why-grid{grid-template-columns:1fr;gap:48px}
+  .why-img{aspect-ratio:16/11}
+  .steps{grid-template-columns:repeat(2,1fr)}
+  .rev-grid{grid-template-columns:1fr 1fr}
+  .cta-box{grid-template-columns:1fr;padding:56px 40px}
+  .contacts-grid{grid-template-columns:1fr}
+  .services{grid-template-columns:1fr 1fr}
+  .svc,.svc:nth-child(1),.svc:nth-child(2){grid-column:span 1;min-height:400px}
+  .svc:nth-child(5){grid-column:span 2}
+  .works-grid{grid-template-columns:repeat(3,1fr)}
+}
+@media (max-width:680px){
+  .wrap{padding:0 16px}
+  section{padding:80px 0}
+  .nav{height:68px}
+  .brand img{width:38px;height:38px}
+  .hero{padding:100px 0 70px;align-items:flex-end}
+  .hero-bg img{width:100%;height:70%;object-position:center 55%}
+  .hero-bg::after{background:linear-gradient(0deg,var(--bg) 40%,rgba(9,9,10,.6) 65%,rgba(9,9,10,.3)),radial-gradient(80% 50% at 60% 30%,rgba(200,16,30,.25),transparent 70%)}
+  .hero p.lead{font-size:16px;margin:20px 0 30px}
+  .hero-actions{flex-direction:column}
+  .hero-actions .btn{justify-content:center}
+  .hero-stats{gap:28px;margin-top:44px}
+  .hero-stats div b{font-size:24px}
+  .scroll-hint{display:none}
+  .services{grid-template-columns:1fr}
+  .svc,.svc:nth-child(1),.svc:nth-child(2),.svc:nth-child(5){grid-column:span 1;min-height:440px}
+  .svc::before{background:linear-gradient(180deg,rgba(9,9,10,.1) 0%,rgba(9,9,10,.85) 42%,rgba(9,9,10,.98))}
+  .svc-body{padding:24px 22px}
+  .svc h3{font-size:20px}
+  .features{grid-template-columns:1fr;gap:24px}
+  .works-grid{grid-template-columns:1fr 1fr;grid-auto-rows:180px;gap:10px}
+  .steps,.rev-grid{grid-template-columns:1fr}
+  .cta-box{padding:44px 24px;border-radius:20px}
+  .cta-actions .btn{width:100%;justify-content:center}
+  .c-card{padding:28px 22px}
+  .c-photo{min-height:320px}
+  .lb-prev,.lb-next{top:auto;bottom:24px;transform:none}
+  .lb-prev{left:calc(50% - 64px)}
+  .lb-next{right:calc(50% - 64px)}
+}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.reveal{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+
+<!-- SVG icons -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-arrow" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M5 12h14M13 6l6 6-6 6"/></symbol>
+  <symbol id="i-wa" viewBox="0 0 24 24"><path fill="currentColor" d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38a9.9 9.9 0 0 0 4.74 1.21c5.46 0 9.91-4.45 9.91-9.91S17.5 2 12.04 2Zm5.8 14.03c-.25.69-1.44 1.32-2 1.37-.51.05-1.15.07-1.86-.12-.43-.14-.98-.32-1.69-.62-2.97-1.28-4.91-4.28-5.06-4.48-.15-.2-1.21-1.61-1.21-3.07 0-1.46.77-2.18 1.04-2.48.27-.3.6-.37.8-.37h.57c.18 0 .43-.07.67.51.25.6.84 2.06.92 2.21.07.15.12.32.02.52-.1.2-.15.32-.3.5-.15.17-.31.39-.45.52-.15.15-.3.31-.13.61.17.3.77 1.27 1.65 2.06 1.14 1.01 2.09 1.33 2.39 1.48.3.15.47.12.65-.07.17-.2.75-.87.95-1.17.2-.3.4-.25.67-.15.27.1 1.73.82 2.03.97.3.15.5.22.57.35.07.12.07.72-.18 1.41Z"/></symbol>
+  <symbol id="i-ig" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".8" fill="currentColor"/></g></symbol>
+  <symbol id="i-shield" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" d="M12 3 4 6v6c0 4.5 3.4 8.3 8 9 4.6-.7 8-4.5 8-9V6l-8-3Z"/><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" d="m9 12 2 2 4-4"/></symbol>
+  <symbol id="i-clock" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></g></symbol>
+  <symbol id="i-star" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" d="m12 3 2.7 5.6 6.1.8-4.5 4.2 1.1 6.1L12 16.8 6.6 19.7l1.1-6.1L3.2 9.4l6.1-.8L12 3Z"/></symbol>
+  <symbol id="i-gem" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" d="M6 3h12l3 6-9 12L3 9l3-6Zm-3 6h18M9 3l3 18M15 3l-3 18"/></symbol>
+  <symbol id="i-pin" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21Z"/><circle cx="12" cy="9.5" r="2.5"/></g></symbol>
+  <symbol id="i-phone" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2Z"/></symbol>
+  <symbol id="i-menu" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" d="M4 7h16M4 12h16M4 17h10"/></symbol>
+  <symbol id="i-x" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" d="M6 6l12 12M18 6 6 18"/></symbol>
+</svg>
+
+<header id="top">
+  <div class="wrap nav">
+    <a href="#top" class="brand" aria-label="Shark Detailing">
+      <img src="img/logo.jpg" alt="Логотип Shark Detailing">
+      <div><b>SHARK<span>.</span></b><small>детейлинг-центр</small></div>
+    </a>
+    <nav class="menu">
+      <a href="#services">Услуги</a>
+      <a href="#why">О нас</a>
+      <a href="#works">Работы</a>
+      <a href="#reviews">Отзывы</a>
+      <a href="#contacts">Контакты</a>
+    </nav>
+    <div class="nav-right">
+      <a class="ig-link" href="https://www.instagram.com/shark.detailiing/" target="_blank" rel="noopener" aria-label="Instagram"><svg><use href="#i-ig"/></svg></a>
+      <a class="btn btn-red js-wa" href="#" target="_blank" rel="noopener">Записаться <svg><use href="#i-arrow"/></svg></a>
+      <button class="burger" aria-label="Меню" id="burger"><svg><use href="#i-menu"/></svg></button>
+    </div>
+  </div>
+</header>
+
+<div class="mob" id="mob">
+  <div class="mob-top">
+    <a href="#top" class="brand"><img src="img/logo.jpg" alt=""><div><b>SHARK<span>.</span></b><small>детейлинг-центр</small></div></a>
+    <button class="burger" style="display:flex" id="mobClose" aria-label="Закрыть"><svg><use href="#i-x"/></svg></button>
+  </div>
+  <nav>
+    <a href="#services">Услуги</a>
+    <a href="#why">О нас</a>
+    <a href="#works">Работы</a>
+    <a href="#reviews">Отзывы</a>
+    <a href="#contacts">Контакты</a>
+    <a href="https://www.instagram.com/shark.detailiing/" target="_blank" rel="noopener">Instagram ↗</a>
+  </nav>
+  <a class="btn btn-red js-wa" href="#" target="_blank" rel="noopener">Записаться в WhatsApp <svg><use href="#i-wa"/></svg></a>
+</div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg"><img src="img/hero.jpg" alt="Aston Martin в студии Shark Detailing"></div>
+  <div class="wrap">
+    <div class="eyebrow">Детейлинг-центр · Махачкала</div>
+    <h1>Хищный блеск <em>для вашего авто</em></h1>
+    <p class="lead">Антигравийная защита, тонировка, полировка, керамика и химчистка. Делаем аккуратно, в срок и с гарантией качества.</p>
+    <div class="hero-actions">
+      <a class="btn btn-red js-wa" href="#" target="_blank" rel="noopener">Записаться на услугу <svg><use href="#i-arrow"/></svg></a>
+      <a class="btn btn-ghost" href="#works">Наши работы</a>
+    </div>
+    <div class="hero-stats">
+      <div><b>4.5<i>★</i></b><span>рейтинг в 2ГИС</span></div>
+      <div><b>10:00–22:00</b><span>часы работы</span></div>
+    </div>
+  </div>
+  <div class="scroll-hint" aria-hidden="true"></div>
+</section>
+
+<!-- SERVICES -->
+<section id="services">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div><div class="eyebrow">Наши услуги</div><h2>Что мы делаем</h2></div>
+      <p>Полный цикл защиты и ухода: от плёнки и керамики до глубокой химчистки салона.</p>
+    </div>
+    <div class="services">
+      <article class="svc reveal">
+        <img src="img/ppf.jpg" alt="Оклейка кузова антигравийной плёнкой" loading="lazy">
+        <span class="svc-num">01</span>
+        <div class="svc-body">
+          <h3>Антигравийная защита</h3>
+          <p>Полиуретановая плёнка защищает кузов от сколов, песка и царапин. Без пузырей и пыли под плёнкой.</p>
+          <ul><li>Полная оклейка</li><li>Зона риска</li><li>Фары и пороги</li></ul>
+          <a class="svc-link js-wa" data-service="Антигравийная защита" href="#" target="_blank" rel="noopener">Узнать стоимость <span><svg><use href="#i-arrow"/></svg></span></a>
+        </div>
+      </article>
+      <article class="svc reveal">
+        <img src="img/tint.jpg" alt="Тонировка стёкол Land Cruiser" loading="lazy">
+        <span class="svc-num">02</span>
+        <div class="svc-body">
+          <h3>Тонировка</h3>
+          <p>Качественные плёнки для стёкол: приватность, защита салона от солнца и стильный вид.</p>
+          <ul><li>Задняя полусфера</li><li>Атермальная</li><li>Растонировка</li></ul>
+          <a class="svc-link js-wa" data-service="Тонировка" href="#" target="_blank" rel="noopener">Узнать стоимость <span><svg><use href="#i-arrow"/></svg></span></a>
+        </div>
+      </article>
+      <article class="svc reveal">
+        <img src="img/polish.jpg" alt="Капот до и после полировки" loading="lazy">
+        <span class="svc-num">03</span>
+        <div class="svc-body">
+          <h3>Полировка</h3>
+          <p>Убираем голограммы, мелкие царапины и возвращаем глубокий зеркальный блеск.</p>
+          <ul><li>Восстановительная</li><li>Защитная</li></ul>
+          <a class="svc-link js-wa" data-service="Полировка" href="#" target="_blank" rel="noopener">Узнать стоимость <span><svg><use href="#i-arrow"/></svg></span></a>
+        </div>
+      </article>
+      <article class="svc reveal">
+        <img src="img/ceramic.jpg" alt="Lexus после нанесения керамики" loading="lazy">
+        <span class="svc-num">04</span>
+        <div class="svc-body">
+          <h3>Керамика</h3>
+          <p>Керамическое покрытие: насыщенный цвет, гидрофоб и долговременная защита ЛКП.</p>
+          <ul><li>Кузов</li><li>Диски</li><li>Стёкла</li></ul>
+          <a class="svc-link js-wa" data-service="Керамика" href="#" target="_blank" rel="noopener">Узнать стоимость <span><svg><use href="#i-arrow"/></svg></span></a>
+        </div>
+      </article>
+      <article class="svc reveal">
+        <img src="img/clean.jpg" alt="Сиденья после химчистки" loading="lazy">
+        <span class="svc-num">05</span>
+        <div class="svc-body">
+          <h3>Химчистка</h3>
+          <p>Глубокая чистка салона: сиденья, потолок, ковры, пластик. Салон как новый.</p>
+          <ul><li>Комплексная</li><li>Кожа</li><li>Потолок</li></ul>
+          <a class="svc-link js-wa" data-service="Химчистка салона" href="#" target="_blank" rel="noopener">Узнать стоимость <span><svg><use href="#i-arrow"/></svg></span></a>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- WHY -->
+<section id="why" class="why">
+  <div class="wrap why-grid">
+    <div class="why-img reveal">
+      <img src="img/studio.jpg" alt="Студия Shark Detailing" loading="lazy">
+      <a class="why-badge" href="https://2gis.ru/makhachkala/firm/70000001076646611/tab/reviews" target="_blank" rel="noopener">
+        <b>4.5</b>
+        <div><div class="stars">★★★★★</div><small>Рейтинг Shark в 2ГИС · 11 оценок</small></div>
+      </a>
+    </div>
+    <div class="reveal">
+      <div class="eyebrow">Почему выбирают нас</div>
+      <h2>Качество в каждой детали</h2>
+      <p class="intro">Светлый оборудованный бокс, профессиональные материалы и мастера, которые относятся к вашей машине как к своей.</p>
+      <div class="features">
+        <div class="feat"><div class="feat-ic"><svg><use href="#i-shield"/></svg></div><div><h4>Профессиональные материалы</h4><p>Проверенные плёнки, составы и керамика</p></div></div>
+        <div class="feat"><div class="feat-ic"><svg><use href="#i-clock"/></svg></div><div><h4>Чётко и в срок</h4><p>Отдаём машину точно к оговорённому времени</p></div></div>
+        <div class="feat"><div class="feat-ic"><svg><use href="#i-star"/></svg></div><div><h4>Опытные мастера</h4><p>Аккуратная работа без пыли и пузырей</p></div></div>
+        <div class="feat"><div class="feat-ic"><svg><use href="#i-gem"/></svg></div><div><h4>Индивидуальный подход</h4><p>Подберём решение под ваш автомобиль и бюджет</p></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WORKS -->
+<section id="works">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div><div class="eyebrow">Портфолио</div><h2>Наши работы</h2></div>
+      <a class="btn btn-ghost" href="https://www.instagram.com/shark.detailiing/" target="_blank" rel="noopener"><svg><use href="#i-ig"/></svg> Больше в Instagram</a>
+    </div>
+    <div class="works-grid reveal" id="works-grid">
+      <button><img src="img/g4.jpg" alt="Toyota Land Cruiser в студии" loading="lazy"></button>
+      <button><img src="img/g1.jpg" alt="Розовый Audi TT" loading="lazy"></button>
+      <button><img src="img/g2.jpg" alt="Tesla Model 3" loading="lazy"></button>
+      <button><img src="img/g3.jpg" alt="Mercedes S-класс" loading="lazy"></button>
+      <button><img src="img/g5.jpg" alt="Mercedes в студии" loading="lazy"></button>
+      <button><img src="img/g8.jpg" alt="Синий Lexus IS F" loading="lazy"></button>
+      <button><img src="img/g6.jpg" alt="Автомобиль в боксе" loading="lazy"></button>
+      <button><img src="img/g7.jpg" alt="Chevrolet Tahoe" loading="lazy"></button>
+      <button><img src="img/work.jpg" alt="Работа мастера" loading="lazy"></button>
+    </div>
+  </div>
+</section>
+
+<div class="lightbox" id="lb" role="dialog" aria-modal="true">
+  <img id="lbImg" alt="">
+  <button class="lb-btn lb-close" id="lbClose" aria-label="Закрыть">✕</button>
+  <button class="lb-btn lb-prev" id="lbPrev" aria-label="Назад">‹</button>
+  <button class="lb-btn lb-next" id="lbNext" aria-label="Вперёд">›</button>
+</div>
+
+<!-- PROCESS -->
+<section id="process" style="padding-top:0">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div><div class="eyebrow">Как мы работаем</div><h2>Четыре простых шага</h2></div>
+    </div>
+    <div class="steps">
+      <div class="step reveal"><div class="step-dot"></div><h4>Заявка</h4><p>Пишете нам в WhatsApp: марка авто и нужная услуга.</p></div>
+      <div class="step reveal"><div class="step-dot"></div><h4>Осмотр</h4><p>Оцениваем состояние машины и называем точную стоимость.</p></div>
+      <div class="step reveal"><div class="step-dot"></div><h4>Работа</h4><p>Выполняем услугу в чистом оборудованном боксе.</p></div>
+      <div class="step reveal"><div class="step-dot"></div><h4>Выдача</h4><p>Показываем результат и даём рекомендации по уходу.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- REVIEWS -->
+<section id="reviews" class="reviews">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div><div class="eyebrow">Отзывы клиентов</div><h2>Нам доверяют</h2></div>
+      <a class="rating-pill" href="https://2gis.ru/makhachkala/firm/70000001076646611/tab/reviews" target="_blank" rel="noopener">
+        <b>4.5</b><div><div class="stars">★★★★★</div><small>11 оценок в 2ГИС</small></div>
+      </a>
+    </div>
+    <div class="rev-grid">
+      <div class="rev reveal"><div class="q">“</div><p>Отличный сервис! Загоняли на пленки, всё аккуратно, без пыли и пузырей. Ребята работают быстро и качественно. Рекомендую!</p><div class="rev-author"><div class="ava">AD</div><div><b>Aa’ Dalikk’</b><small>Отзыв в 2ГИС · антигравийная плёнка</small></div></div></div>
+      <div class="rev reveal"><div class="q">“</div><p>Загнал машину на полировку и керамику, работу выполнили качественно, ребята очень ответственные ✊🏻🔥</p><div class="rev-author"><div class="ava">ОС</div><div><b>отца сын</b><small>Отзыв в 2ГИС · полировка и керамика</small></div></div></div>
+      <div class="rev reveal"><div class="q">“</div><p>Оставлял машину на химчистку, результатом доволен, машина как новая. Рекомендую! Удобное местоположение детейлинга 👍</p><div class="rev-author"><div class="ava">АВ</div><div><b>Андрей Викторович</b><small>Отзыв в 2ГИС · химчистка</small></div></div></div>
+      <div class="rev reveal"><div class="q">“</div><p>Работу выполнили четко и в сроки 👍🏻</p><div class="rev-author"><div class="ava">СЧ</div><div><b>Саид Чавтаров</b><small>Отзыв в 2ГИС</small></div></div></div>
+      <div class="rev reveal"><div class="q">“</div><p>Все на высшем уровне</p><div class="rev-author"><div class="ava">АИ</div><div><b>Али Исаев</b><small>Отзыв в 2ГИС</small></div></div></div>
+      <div class="rev reveal"><div class="q">“</div><p>👏👏 Хорошие мастера</p><div class="rev-author"><div class="ava">MA</div><div><b>Mirismail Abdullaev</b><small>Отзыв в 2ГИС</small></div></div></div>
+    </div>
+    <div class="rev-more reveal"><a class="btn btn-ghost" href="https://2gis.ru/makhachkala/firm/70000001076646611/tab/reviews" target="_blank" rel="noopener">Все отзывы в 2ГИС <svg><use href="#i-arrow"/></svg></a></div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta" style="padding-top:110px">
+  <div class="wrap">
+    <div class="cta-box reveal">
+      <div>
+        <h2>Запишитесь на детейлинг сегодня</h2>
+        <p>Напишите нам в WhatsApp: ответим на вопросы, рассчитаем стоимость и подберём удобное время.</p>
+      </div>
+      <div class="cta-actions">
+        <a class="btn btn-white js-wa" href="#" target="_blank" rel="noopener"><svg><use href="#i-wa"/></svg> Написать в WhatsApp</a>
+        <a class="btn btn-ghost" href="https://www.instagram.com/shark.detailiing/" target="_blank" rel="noopener"><svg><use href="#i-ig"/></svg> @shark.detailiing</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACTS -->
+<section id="contacts" style="padding-bottom:0">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div><div class="eyebrow">Контакты</div><h2>Ждём вас в студии</h2></div>
+    </div>
+    <div class="contacts-grid">
+      <div class="c-card reveal">
+        <div class="c-row"><div class="feat-ic"><svg><use href="#i-pin"/></svg></div><div><small>Адрес</small><b>Махачкала, ул. Азизова, 41</b><small>Ленинский район, 1 этаж</small></div></div>
+        <div class="c-row"><div class="feat-ic"><svg><use href="#i-phone"/></svg></div><div><small>Телефон / WhatsApp</small><a href="tel:+79060015550">+7 906 001-55-50</a></div></div>
+        <div class="c-row"><div class="feat-ic"><svg><use href="#i-clock"/></svg></div><div><small>Режим работы</small><b>10:00 – 22:00</b><small>Запись в WhatsApp</small></div></div>
+        <div class="c-row"><div class="feat-ic"><svg><use href="#i-ig"/></svg></div><div><small>Instagram</small><a href="https://www.instagram.com/shark.detailiing/" target="_blank" rel="noopener">@shark.detailiing</a></div></div>
+        <div class="btns">
+          <a class="btn btn-red js-wa" href="#" target="_blank" rel="noopener">Записаться <svg><use href="#i-wa"/></svg></a>
+          <a class="btn btn-ghost" href="https://2gis.ru/makhachkala/firm/70000001076646611" target="_blank" rel="noopener">Маршрут в 2ГИС</a>
+        </div>
+      </div>
+      <a class="c-photo reveal" href="https://2gis.ru/makhachkala/firm/70000001076646611" target="_blank" rel="noopener">
+        <img src="img/facade.jpg" alt="Вход в Shark Detailing" loading="lazy">
+        <div class="cap"><div><b>Shark Detailing</b><span>ул. Азизова, 41 · Махачкала</span></div><span class="btn btn-ghost" style="padding:12px 20px">Открыть карту <svg><use href="#i-arrow"/></svg></span></div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap foot">
+    <a href="#top" class="brand"><img src="img/logo.jpg" alt=""><div><b>SHARK<span>.</span></b><small>детейлинг-центр · Махачкала</small></div></a>
+    <div class="foot-links">
+      <a href="#services">Услуги</a>
+      <a href="#works">Работы</a>
+      <a href="#reviews">Отзывы</a>
+      <a href="https://www.instagram.com/shark.detailiing/" target="_blank" rel="noopener">Instagram</a>
+      <a href="https://2gis.ru/makhachkala/firm/70000001076646611" target="_blank" rel="noopener">2ГИС</a>
+    </div>
+    <span>© <span id="year"></span> Shark Detailing</span>
+  </div>
+</footer>
+
+<a class="wa-float js-wa" href="#" target="_blank" rel="noopener" aria-label="Написать в WhatsApp"><svg><use href="#i-wa"/></svg></a>
+
+<script>
+// WhatsApp booking links
+const WA_PHONE = '79060015550';
+document.querySelectorAll('.js-wa').forEach(a => {
+  const svc = a.dataset.service;
+  const text = svc
+    ? `Здравствуйте! Хочу записаться на услугу «${svc}». Подскажите стоимость и свободное время.`
+    : 'Здравствуйте! Хочу записаться в Shark Detailing.';
+  a.href = `https://wa.me/${WA_PHONE}?text=${encodeURIComponent(text)}`;
+});
+
+// Header background on scroll
+const header = document.querySelector('header');
+const onScroll = () => header.classList.toggle('scrolled', scrollY > 30);
+addEventListener('scroll', onScroll, { passive: true });
+onScroll();
+
+// Mobile menu
+const mob = document.getElementById('mob');
+document.getElementById('burger').onclick = () => mob.classList.add('open');
+document.getElementById('mobClose').onclick = () => mob.classList.remove('open');
+mob.querySelectorAll('a').forEach(a => a.addEventListener('click', () => mob.classList.remove('open')));
+
+// Reveal on scroll
+const io = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+}, { threshold: .12 });
+document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+// Lightbox
+const imgs = [...document.querySelectorAll('#works-grid img')];
+const lb = document.getElementById('lb'), lbImg = document.getElementById('lbImg');
+let cur = 0;
+const show = i => { cur = (i + imgs.length) % imgs.length; lbImg.src = imgs[cur].src; lbImg.alt = imgs[cur].alt; };
+imgs.forEach((im, i) => im.parentElement.addEventListener('click', () => { show(i); lb.classList.add('open'); }));
+document.getElementById('lbClose').onclick = () => lb.classList.remove('open');
+document.getElementById('lbPrev').onclick = e => { e.stopPropagation(); show(cur - 1); };
+document.getElementById('lbNext').onclick = e => { e.stopPropagation(); show(cur + 1); };
+lb.addEventListener('click', e => { if (e.target === lb) lb.classList.remove('open'); });
+addEventListener('keydown', e => {
+  if (!lb.classList.contains('open')) return;
+  if (e.key === 'Escape') lb.classList.remove('open');
+  if (e.key === 'ArrowLeft') show(cur - 1);
+  if (e.key === 'ArrowRight') show(cur + 1);
+});
+
+document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+</body>
+</html>
